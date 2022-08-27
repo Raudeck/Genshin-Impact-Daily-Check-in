@@ -24,11 +24,11 @@ impl AccountInfo {
         headers.insert(USER_AGENT, HeaderValue::from_str("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63").unwrap());
         
         let resp = client.post("https://hk4e-api-os.mihoyo.com/event/sol/sign?lang=en-us&act_id=e202102251931481")
-        .headers(headers)
-        .send()
-        .await?
-        .json::<ParseJSON>()
-        .await?
+            .headers(headers)
+            .send()
+            .await?
+            .json::<ParseJSON>()
+            .await?
         ;
 
         println!("{:#?}", resp);

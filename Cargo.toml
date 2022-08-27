@@ -10,3 +10,11 @@ reqwest =  { version = "0.11", features = ["json"]}
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+
+[profile.release]
+debug = false
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
